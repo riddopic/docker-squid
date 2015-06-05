@@ -1,5 +1,5 @@
 
-# Transparent HTTP Cacheing Container using Squid.
+# Transparent HTTP Cacheing Container using Squid
 
 This Dockerfile builds an Alpine Linux container using Squid configured to work in transparent mode as a small and fast caching web proxy.
 
@@ -29,12 +29,29 @@ If you would like to have a look around or check the logs you can connect to the
 
 The container can be tuned using environment variables.
 
-Variable | Description
------------- | -------------
-`MAX_CACHE_OBJECT` | Squid has a maximum object cache size. Often when caching debian packages vs standard web content it is valuable to increase this size. Use the `-e MAX_CACHE_OBJECT=1024` to set the max object size (in MB).
-`DISK_CACHE_SIZE` | The squid disk cache size can be tuned. use `-e DISK_CACHE_SIZE=5000` to set the disk cache size (in MB).
-`SQUID_DIRECTIVES_ONLY` | The contents of squid.conf will only be what's defined in `SQUID_DIRECTIVES` giving the user full control of squid.
-`SQUID_DIRECTIVES` | This will append any contents of the environment variable to squid.conf. It is expected that you will use multi-line block quote for the contents.
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><tt>MAX_CACHE_OBJECT</tt></td>
+    <td>Squid has a maximum object cache size. Often when caching system packages vs standard web content it is valuable to increase this size. Use the <tt>-e MAX_CACHE_OBJECT=1024</tt> to set the max object size (in MB).</td>
+  </tr>
+  <tr>
+    <td><tt>DISK_CACHE_SIZE TT</tt></td>
+    <td>The squid disk cache size can be tuned. use <tt>-e DISK_CACHE_SIZE=5000</tt> to set the disk cache size (in MB).</td>
+  </tr>
+  <tr>
+    <td><tt>SQUID_DIRECTIVES_ONLY</tt></td>
+    <td>The contents of <tt>squid.conf</tt> will only be what's defined in <tt>SQUID_DIRECTIVES</tt> giving the user full control of squid.</td>
+  </tr>
+  <tr>
+    <td><tt>SQUID_DIRECTIVES</tt></td>
+    <td>This will append any contents of the environment variable to <tt>squid.conf</tt>. It is expected that you will use multi-line block quote for the contents.</td>
+  </tr>
+</table>
+
 
 ### Persistent Cache
 
