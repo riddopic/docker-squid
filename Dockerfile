@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-FROM       alpine:3.2
+FROM       alpine:3.13
 MAINTAINER Stefano Harding <riddopic@gmail.com>
 
 ADD root /
